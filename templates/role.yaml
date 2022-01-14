@@ -4,7 +4,7 @@ metadata:
   name: modify-pods
 rules:
   - apiGroups: [""]
-    resources: ["pods", "secrets", "namespaces"]
+    resources: ["pods", "secrets", "namespaces", "services"]
     verbs:
       - get
       - list

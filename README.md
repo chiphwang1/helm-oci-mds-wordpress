@@ -23,7 +23,7 @@ This Helm chart relies on the OCI Service Operator for Kubernetes (OSOK) and it 
 
 **1. Clone or download the contents of this repo** 
      
-     git clone https://github.com/chiphwang1/oci-mysql-db-system-helm.git
+     git clone https://github.com/chiphwang1/helm-oci-mds-wordpress.git
 
 **2. Change to the directory that holds the Helm Chart** 
 
@@ -53,11 +53,21 @@ This Helm chart relies on the OCI Service Operator for Kubernetes (OSOK) and it 
 
      helm  -n <namespace name> ls
 
+
 **7. To uninstall the Helm chart**
 
      helm uninstall -n <namespace name> <name of the install> .
      
-  **Note:**
+  **Notes/Issues:**
+ 
+ Provisioning the MySQL Database Systems (MDS) can take up to 20 minutes. The Wordpress deployment will not be available the all components are up. You can the status of the MDS system with the following command.
+ 
+  kubectl -n  <namespace of mysqldbsystem>  get of mysqldbsystem -o wide
+     
+   NAME       DISPLAYNAME   STATUS   OCID                                                                                       AGE
+   test4000   test4000      Active   ocid1.mysqldbsystem.oc1.iad.aaaaaaaapgrgv23wlrf47nvlp26w6nvfujntvimjkdmw6jo5eft3lo7j5s6q   15h
+ 
+ 
  uninstalling the helm chart will only remove the mysqldbsystem resource from the cluster and not from OCI. You will need to use the console or the OCI cli to remove the MDS from OCI. This is to prevent accidental deletion of the database.
 
 ## MySQL DB System value.yaml Specification

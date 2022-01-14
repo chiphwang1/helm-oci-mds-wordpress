@@ -5,7 +5,7 @@
 
 ## Introduction
 
-This Helm chart will bootstrap a WordPress deployment using a MySQL Database Systems (MDS) as the database in a Kubernetes cluster deployed in Oracle CLoud Infrastrcuture (OCI).  The Kubernetes cluster can be a cluster deployed using Oracle Container Engine for Kuberntes (OKE), or it can be a customer managed cluster deployed on virtual machine instances. 
+This Helm chart will bootstrap a WordPress deployment using a MySQL Database Systems (MDS) as the database in a Kubernetes cluster deployed in Oracle CLoud Infrastrcuture (OCI). It will also create a loadbalancer with an externally accessible IP address to access this deployment.  The Kubernetes cluster can be a cluster deployed using Oracle Container Engine for Kuberntes (OKE), or it can be a customer managed cluster deployed on virtual machine instances. 
 
 
 This Helm chart relies on the OCI Service Operator for Kubernetes (OSOK) and it is a pre-requisite to have OSOK deployed within the cluster to use this Helm chart.
@@ -60,14 +60,25 @@ This Helm chart relies on the OCI Service Operator for Kubernetes (OSOK) and it 
      
   **Notes/Issues:**
  
- Provisioning the MySQL Database Systems (MDS) can take up to 20 minutes. The Wordpress deployment will not be available the all components are up. You can the status of the MDS system with the following command.
+ Provisioning the MySQL Database Systems (MDS) can take up to 20 minutes. The Wordpress deployment will not be available until all components are up. 
  
- The MySqlDbSystem CR can list the MySQL DB Systems in the cluster: 
+ To confirm that the MDS is active run the following command and check the status of the MDS system.
+
 ```sh
-$ kubectl get mysqldbsystems -o wide
-NAME       DISPLAYNAME   STATUS   OCID                                                                                       AGE
-test4000   test4000      Active   ocid1.mysqldbsystem.oc1.iad.aaaaaaaapgrgv23wlrf47nvlp26w6nvfujntvimjkdmw6jo5eft3lo7j5s6q   15h
+$ kubectl -n wordpress get mysqldbsystems -o wide
+NAME    DISPLAYNAME   STATUS   OCID                                                                                       AGE
+MDS       MDS         Active   ocid1.mysqldbsystem.oc1.iad.aaaaaaaapgrgv23wlrf47nvlp26w6nvfujntvimjkdmw6jo5eft3lo7j5s6q   15h
 ```
+ 
+ To retreive the IP address of the loadbalancer use the following command.
+ 
+ ```sh
+$ kubectl -n wordpress get svc
+NAME        TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)        AGE
+wordpress   LoadBalancer   10.96.173.170   132.226.44.234   80:30388/TCP   15h
+```
+ 
+ 
  
  uninstalling the helm chart will only remove the mysqldbsystem resource from the cluster and not from OCI. You will need to use the console or the OCI cli to remove the MDS from OCI. This is to prevent accidental deletion of the database.
 

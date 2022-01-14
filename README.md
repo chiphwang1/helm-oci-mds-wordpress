@@ -62,12 +62,9 @@ This Helm chart relies on the OCI Service Operator for Kubernetes (OSOK) and it 
  
  Provisioning the MySQL Database Systems (MDS) can take up to 20 minutes. The Wordpress deployment will not be available the all components are up. You can the status of the MDS system with the following command.
  
-  '''sh
-  kubectl -n  <namespace of mysqldbsystem>  get of mysqldbsystem -o wide
-     
-   NAME       DISPLAYNAME   STATUS   OCID                                                                                       AGE
-   test4000   test4000      Active   ocid1.mysqldbsystem.oc1.iad.aaaaaaaapgrgv23wlrf47nvlp26w6nvfujntvimjkdmw6jo5eft3lo7j5s6q   15h
- '''
+ chiphwan-mac:init_container chiphwan$ kubectl -n test4000 get mysqldbsystem -o wide
+NAME       DISPLAYNAME   STATUS   OCID                                                                                       AGE
+test4000   test4000      Active   ocid1.mysqldbsystem.oc1.iad.aaaaaaaapgrgv23wlrf47nvlp26w6nvfujntvimjkdmw6jo5eft3lo7j5s6q   15h
  
  uninstalling the helm chart will only remove the mysqldbsystem resource from the cluster and not from OCI. You will need to use the console or the OCI cli to remove the MDS from OCI. This is to prevent accidental deletion of the database.
 

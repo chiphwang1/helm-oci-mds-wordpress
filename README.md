@@ -70,7 +70,7 @@ NAME    DISPLAYNAME   STATUS   OCID                                             
 MDS       MDS         Active   ocid1.mysqldbsystem.oc1.iad.aaaaaaaapgrgv23wlrf47nvlp26w6nvfujntvimjkdmw6jo5eft3lo7j5s6q   15h
 ```
 
-It is also possible to monitor the status of the MDS creation by observing the logs of the dbjob container. To get the name of the dbcontianer run the following command. 
+It is also possible to monitor the status of the MDS creation by observing the logs of the dbjob container. To get the name of the db contianer run the following command. 
 
 ```sh
 $kubectl -n wordpree get pods

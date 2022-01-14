@@ -84,7 +84,7 @@ To watch the logs use the following command. The logs will update every 5 second
 ```sh
 $ kubectl -n wodpress logs -f dbjob-khr9n
 
-*********************************
+--------------------------------
 Check for readiness of the MySQL instance by checking for creation of secret test6000
 NAME                            TYPE                                  DATA   AGE
 default-token-6qpqr             kubernetes.io/service-account-token   3      20m
@@ -118,8 +118,8 @@ wordpress   LoadBalancer   10.96.12.177   129.158.42.147   80:32131/TCP   22m
  
  ```sh
 $ kubectl -n wordpress get svc
-NAME        TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)        AGE
-wordpress   LoadBalancer   10.96.173.170   132.226.44.234   80:30388/TCP   15h
+NAME        TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)       AGE
+wordpress   LoadBalancer   10.96.12.177  129.158.42.147   80:30388/TCP    22m
 ```
  
  

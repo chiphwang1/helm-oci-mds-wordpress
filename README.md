@@ -5,7 +5,7 @@
 
 ## Introduction
 
-This Helm chart will bootstrap a WordPress deployment using a MySQL Database Systems (MDS) as the database in a Kubernetes cluster deployed in Oracle CLoud Infrastrcuture (OCI). It will also create a loadbalancer with an externally accessible IP address to access this deployment.  The Kubernetes cluster can be a cluster deployed using Oracle Container Engine for Kuberntes (OKE), or it can be a customer managed cluster deployed on virtual machine instances. 
+This Helm chart will bootstrap a WordPress deployment using a MySQL Database Systems (MDS) as the database in a Kubernetes cluster deployed in Oracle CLoud Infrastrcuture (OCI). It will also create a loadbalancer with an externally accessible IP address to access the Wordpress application.  The Kubernetes cluster can be a cluster deployed using Oracle Container Engine for Kuberntes (OKE), or it can be a customer managed cluster deployed on virtual machine instances. 
 
 
 This Helm chart relies on the OCI Service Operator for Kubernetes (OSOK) and it is a pre-requisite to have OSOK deployed within the cluster to use this Helm chart.
@@ -69,6 +69,24 @@ $ kubectl -n wordpress get mysqldbsystems -o wide
 NAME    DISPLAYNAME   STATUS   OCID                                                                                       AGE
 MDS       MDS         Active   ocid1.mysqldbsystem.oc1.iad.aaaaaaaapgrgv23wlrf47nvlp26w6nvfujntvimjkdmw6jo5eft3lo7j5s6q   15h
 ```
+
+
+```sh
+$kubectl -n test6000 get pods
+NAME                         READY   STATUS     RESTARTS   AGE
+dbjob-khr9n                  1/1     Running    0          2m10s
+wordpress-844ffbb9d7-md744   0/1     Init:0/1   0          2m10s
+```
+
+
+
+```sh
+$ kubectl -n wodpress logs -f dbjob-khr9n
+NAME    DISPLAYNAME   STATUS   OCID                                                                                       AGE
+MDS       MDS         Active   ocid1.mysqldbsystem.oc1.iad.aaaaaaaapgrgv23wlrf47nvlp26w6nvfujntvimjkdmw6jo5eft3lo7j5s6q   15h
+```
+
+
  
  To retreive the IP address of the loadbalancer use the following command.
  

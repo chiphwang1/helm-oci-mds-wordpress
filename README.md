@@ -5,7 +5,8 @@
 
 ## Introduction
 
-The OCI MySQL Database System Helm Chart makes it easy to create and manage MySQL Database Systems (MDS) from a Kubernetes cluster deployed within Oracle CLoud Infrastrcuture (OCI). The Kubernetes cluster can be a cluster deployed using Oracle Container Engine for Kuberntes (OKE), or it can be a customer managed cluster deployed on virtual machine instances. 
+This Helm chart will bootstrap a WordPress deployment using a MySQL Database Systems (MDS) as the database in a Kubernetes cluster deployed in Oracle CLoud Infrastrcuture (OCI).  The Kubernetes cluster can be a cluster deployed using Oracle Container Engine for Kuberntes (OKE), or it can be a customer managed cluster deployed on virtual machine instances. 
+
 
 This Helm chart relies on the OCI Service Operator for Kubernetes (OSOK) and it is a pre-requisite to have OSOK deployed within the cluster to use this Helm chart.
 
@@ -18,7 +19,7 @@ This Helm chart relies on the OCI Service Operator for Kubernetes (OSOK) and it 
 - [Helm installed](https://helm.sh/docs/intro/install/)
 
 
-## Installation of Helm chart
+##  Getting Started
 
 **1. Clone or download the contents of this repo** 
      
@@ -26,7 +27,7 @@ This Helm chart relies on the OCI Service Operator for Kubernetes (OSOK) and it 
 
 **2. Change to the directory that holds the Helm Chart** 
 
-      cd ./oci-mysql-db-system-helm
+      cd ./helm-oci-mds-wordpress
 
 **3. Populate the values.yaml file with information to deploy the MDS resource**
 

@@ -44,7 +44,7 @@ This Helm chart relies on the OCI Service Operator for Kubernetes (OSOK) and it 
        <name for this install> .
   
   **Example:**
-  helm -n mysqldb --set database.username=admin  --set database.password=Admin12345 ocimds .
+  helm -n wordpress --set database.username=admin  --set database.password=Admin12345 ocimds .
   
  The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1   special (nonalphanumeric) character.
 

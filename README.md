@@ -121,3 +121,10 @@ This Helm chart relies on the OCI Service Operator for Kubernetes (OSOK) and it 
 - [OCI Service Operator for Kuberntes (OSOK) deployed in the cluster](https://github.com/oracle/oci-service-operator)
 - [MySQL SB System Service](https://www.oracle.com/mysql/)
 
+
+## License
+Copyright (c) 2021 Oracle and/or its affiliates.
+
+Licensed under the Universal Permissive License (UPL), Version 1.0.
+
+See [LICENSE](LICENSE) for more details.

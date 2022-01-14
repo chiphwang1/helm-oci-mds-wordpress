@@ -103,7 +103,7 @@ sh.helm.release.v1.mysqldb.v1   helm.sh/release.v1                    1      19m
 MySQL instance ready
 --------------------------------
 --------------------------------
-Connecting to Datbase instance
+Connecting to Database instance
 --------------------------------
 Database wordpress created 
 --------------------------------

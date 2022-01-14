@@ -70,20 +70,46 @@ NAME    DISPLAYNAME   STATUS   OCID                                             
 MDS       MDS         Active   ocid1.mysqldbsystem.oc1.iad.aaaaaaaapgrgv23wlrf47nvlp26w6nvfujntvimjkdmw6jo5eft3lo7j5s6q   15h
 ```
 
+It is also possible to monitor the status of the MDS creation by observing the logs of the dbjob container. To get the name of the dbcontianer run the following command. 
 
 ```sh
-$kubectl -n test6000 get pods
+$kubectl -n wordpree get pods
 NAME                         READY   STATUS     RESTARTS   AGE
 dbjob-khr9n                  1/1     Running    0          2m10s
 wordpress-844ffbb9d7-md744   0/1     Init:0/1   0          2m10s
 ```
 
-
+To watch the logs use the following command. The logs will update every 5 seconds until the MDS is ready.
 
 ```sh
 $ kubectl -n wodpress logs -f dbjob-khr9n
-NAME    DISPLAYNAME   STATUS   OCID                                                                                       AGE
-MDS       MDS         Active   ocid1.mysqldbsystem.oc1.iad.aaaaaaaapgrgv23wlrf47nvlp26w6nvfujntvimjkdmw6jo5eft3lo7j5s6q   15h
+
+*********************************
+Check for readiness of the MySQL instance by checking for creation of secret test6000
+NAME                            TYPE                                  DATA   AGE
+default-token-6qpqr             kubernetes.io/service-account-token   3      20m
+internal-kubectl-token-h6jp8    kubernetes.io/service-account-token   3      19m
+mysqlsecret                     Opaque                                2      19m
+sh.helm.release.v1.mysqldb.v1   helm.sh/release.v1                    1      19m
+*********************************
+Check for readiness of the MySQL instance by checking for creation of secret test6000
+NAME                            TYPE                                  DATA   AGE
+default-token-6qpqr             kubernetes.io/service-account-token   3      20m
+internal-kubectl-token-h6jp8    kubernetes.io/service-account-token   3      19m
+mysqlsecret                     Opaque                                2      19m
+sh.helm.release.v1.mysqldb.v1   helm.sh/release.v1                    1      19m
+*********************************
+*********************************
+MySQL instance ready
+*********************************
+*********************************
+Connecting to Datbase instance
+*********************************
+Database wordpress created 
+*********************************
+NAME        TYPE           CLUSTER-IP     EXTERNAL-IP      PORT(S)        AGE
+wordpress   LoadBalancer   10.96.12.177   129.158.42.147   80:32131/TCP   22m
+
 ```
 
 

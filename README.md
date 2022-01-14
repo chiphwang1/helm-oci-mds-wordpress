@@ -85,14 +85,14 @@ To watch the logs use the following command. The logs will update every 5 second
 $ kubectl -n wodpress logs -f dbjob-khr9n
 
 --------------------------------
-Check for readiness of the MySQL instance by checking for creation of secret test6000
+Check for readiness of the MySQL instance by checking for creation of secret mysql
 NAME                            TYPE                                  DATA   AGE
 default-token-6qpqr             kubernetes.io/service-account-token   3      20m
 internal-kubectl-token-h6jp8    kubernetes.io/service-account-token   3      19m
 mysqlsecret                     Opaque                                2      19m
 sh.helm.release.v1.mysqldb.v1   helm.sh/release.v1                    1      19m
 --------------------------------
-Check for readiness of the MySQL instance by checking for creation of secret test6000
+Check for readiness of the MySQL instance by checking for creation of secret mysql
 NAME                            TYPE                                  DATA   AGE
 default-token-6qpqr             kubernetes.io/service-account-token   3      20m
 internal-kubectl-token-h6jp8    kubernetes.io/service-account-token   3      19m

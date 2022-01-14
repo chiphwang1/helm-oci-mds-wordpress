@@ -64,9 +64,9 @@ This Helm chart relies on the OCI Service Operator for Kubernetes (OSOK) and it 
  
  The MySqlDbSystem CR can list the MySQL DB Systems in the cluster: 
 ```sh
-$ kubectl get mysqldbsystems
-NAME                       STATUS         AGE
-mysqldbsystems-sample      Active         4d
+$ kubectl get mysqldbsystems -o wide
+NAME       DISPLAYNAME   STATUS   OCID                                                                                       AGE
+test4000   test4000      Active   ocid1.mysqldbsystem.oc1.iad.aaaaaaaapgrgv23wlrf47nvlp26w6nvfujntvimjkdmw6jo5eft3lo7j5s6q   15h
 ```
  
  uninstalling the helm chart will only remove the mysqldbsystem resource from the cluster and not from OCI. You will need to use the console or the OCI cli to remove the MDS from OCI. This is to prevent accidental deletion of the database.

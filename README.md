@@ -91,22 +91,22 @@ default-token-6qpqr             kubernetes.io/service-account-token   3      20m
 internal-kubectl-token-h6jp8    kubernetes.io/service-account-token   3      19m
 mysqlsecret                     Opaque                                2      19m
 sh.helm.release.v1.mysqldb.v1   helm.sh/release.v1                    1      19m
-*********************************
+--------------------------------
 Check for readiness of the MySQL instance by checking for creation of secret test6000
 NAME                            TYPE                                  DATA   AGE
 default-token-6qpqr             kubernetes.io/service-account-token   3      20m
 internal-kubectl-token-h6jp8    kubernetes.io/service-account-token   3      19m
 mysqlsecret                     Opaque                                2      19m
 sh.helm.release.v1.mysqldb.v1   helm.sh/release.v1                    1      19m
-*********************************
-*********************************
+--------------------------------
+--------------------------------
 MySQL instance ready
-*********************************
-*********************************
+--------------------------------
+--------------------------------
 Connecting to Datbase instance
-*********************************
+--------------------------------
 Database wordpress created 
-*********************************
+--------------------------------
 NAME        TYPE           CLUSTER-IP     EXTERNAL-IP      PORT(S)        AGE
 wordpress   LoadBalancer   10.96.12.177   129.158.42.147   80:32131/TCP   22m
 

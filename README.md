@@ -73,7 +73,7 @@ MDS       MDS         Active   ocid1.mysqldbsystem.oc1.iad.aaaaaaaapgrgv23wlrf47
 It is also possible to monitor the status of the MDS creation by observing the logs of the dbjob container. To get the name of the db contianer run the following command. 
 
 ```sh
-$kubectl -n wordpree get pods
+$kubectl -n wordpress get pods
 NAME                         READY   STATUS     RESTARTS   AGE
 dbjob-khr9n                  1/1     Running    0          2m10s
 wordpress-844ffbb9d7-md744   0/1     Init:0/1   0          2m10s

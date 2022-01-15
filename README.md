@@ -124,7 +124,7 @@ wordpress   LoadBalancer   10.96.12.177  129.158.42.147   80:30388/TCP    22m
  
  **Important Note**
  
- uninstalling the helm chart will only remove the mysqldbsystem resource from the cluster and not from OCI. You will need to use the console or the OCI cli to remove the MDS from OCI. This is to prevent accidental deletion of the database.
+ Uninstalling the helm chart will only remove the mysqldbsystem resource from the cluster and not from OCI. You will need to use the console or the OCI cli to remove the MDS from OCI. This is to prevent accidental deletion of the database.
 
 ## MySQL DB System value.yaml Specification
 
